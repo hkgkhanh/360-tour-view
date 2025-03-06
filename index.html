@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Tour demo</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+    <script src="jquery-2.2.4.js"></script>
+    <script src="screenfull.min.js"></script>
+    <script src="PieView.js"></script>
+    <script src="GyroTouchOptions.js"></script>
+    <!-- <script src="//naver.github.io/egjs-view360/release/latest/dist/PanoViewer/view360.panoviewer.pkgd.min.js"></script> -->
+    <script src="//naver.github.io/egjs-view360/release/latest/dist/view360.pkgd.js"></script>
+    <script src="PanoControls.js"></script>
+</head>
+<body>
+    <h1>Hello world</h1>
+
+    <div id="panoviewer-container">
+        <div id="panoSet" data-page="1">
+            <div id="myPanoViewer"></div>
+
+            <div class="layer" onclick="closeLayer(event);">
+                <img src="https://naver.github.io/egjs-view360/v3/examples/panoviewer/etc/img/book1.jpg">
+            </div>
+            <div class="hotspot search" data-page="1" data-anchor-index="0" data-yaw="52" data-pitch="-14" onclick="openLayer('book1.jpg')"></div>
+            <div class="hotspot search" data-page="1" data-anchor-index="1" data-yaw="-45" data-pitch="-18" onclick="openLayer('book2.jpg')"></div>
+            <div class="hotspot search" data-page="1" data-anchor-index="2" data-yaw="6" data-pitch="-17" onclick="openLayer('book3.jpg')"></div>
+            <div class="hotspot link" data-page="1" data-anchor-index="3" data-yaw="-96" data-pitch="-8" onclick="load(this, 2)">
+                See img2
+            </div>
+            <div class="hotspot search" data-page="2" data-anchor-index="0" data-yaw="-60" data-pitch="-23" onclick="openLayer('book4.jpg')"></div>
+            <div class="hotspot link" data-page="2" data-anchor-index="1" data-yaw="80" data-pitch="-12" onclick="load(this, 1)">
+                See img1
+            </div>
+
+            <div id="custom-controls">
+                <div class="view-btn around"><i class="fi fi-rs-rotate-left"></i></div>
+                <div class="view-btn fullscreen"><i class="fi fi-rs-expand"></i></div>
+                <div class="view-btn music"><i class="fi fi-rs-music"></i></div>
+                <div class="view-btn voice"><i class="fi fi-rs-microphone"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="asset/dreams.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>

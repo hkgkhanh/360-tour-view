@@ -1,0 +1,111 @@
+#panoviewer-container {
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+#myPanoViewer {
+    width: 600px;
+    height: 400px;
+    position: inherit;
+}
+
+#custom-controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.view-btn {
+    width: 32px;
+    height: 32px;
+    color: rgb(57, 63, 73);
+    background-color: rgb(248, 249, 250);
+    opacity: 0.5;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+
+.hotspot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.hotspot.search {
+    width: 24px;
+    height: 24px;
+    /* border: 1px solid #fff; */
+}
+
+.hotspot.search:before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    border: 3px solid #000;
+}
+
+.hotspot.search:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    left: 14px;
+    width: 3px;
+    height: 8px;
+    background: #000;
+    transform-origin: 50% 0%;
+    transform: rotate(-45deg);
+}
+
+.hotspot.link {
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+}
+
+.viewer[data-page="1"] .hotspot[data-page="1"] {
+    display: block;
+}
+
+.viewer[data-page="2"] .hotspot[data-page="2"] {
+    display: block;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 4;
+    display: none;
+}
+
+.layer img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
